@@ -1,0 +1,185 @@
+﻿[
+    {
+		"nome":"Valeria",
+		"sobrenome":"Barros",
+		"endereco":
+		{
+			"logradouro":"Rua Cafelandia",
+			"numero":"412",
+			"cidade":"Santo André",
+			"estado":"São Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+    {
+		"nome":"Cleber",
+		"sobrenome":"Santos",
+		"endereco":
+		{
+			"logradouro":"Rua dos Bambus",
+			"numero":"521",
+			"cidade":"Santo André",
+			"estado":"São Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Barbara",
+		"sobrenome":"Silva",
+		"endereco":
+		{
+			"logradouro":"Rua Coréia",
+			"numero":"430",
+			"cidade":"Santo André",
+			"estado":"São Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Claudio",
+		"sobrenome":"Rodrigues",
+		"endereco":
+		{
+			"logradouro":"Rua Carlos Lacerda", 
+			"numero":"25",
+			"cidade":"São Bernardo do Campo",
+			"estado":"São Paulo",
+			"pais":"Brasil"      ,
+		}
+	},
+
+	{
+		"nome":"Lucien" ,
+		"sobrenome":"Silva",
+		"endereco":
+		{
+			"logradouro":"Rua Andre Coppini" ,
+			"numero":"29",
+			"cidade":"Sao Bernardo Do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Vanderlei" ,
+		"sobrenome":"Leite",
+		"endereco":
+		{
+			"logradouro":"Rua Machado De Assis", 
+			"numero":"73",
+			"cidade":"Sao Bernardo Do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil"    ,  
+		}
+	},
+
+	{
+		"nome":"Leonardo" ,
+		"sobrenome":"Rodrigues",
+		"endereco":
+		{
+			"logradouro":"Rua Rosa Margonari Borali" ,
+			"numero":"41",
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil"      ,
+		}
+	},
+
+
+	{
+		"nome":"Alexandre" ,
+		"sobrenome":"Refineti",
+		"endereco":
+		{
+			"logradouro":"Rua Americo Margonari" ,
+			"numero":"46",
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo" ,
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Rosana" ,
+		"sobrenome":"Almeida",
+		"endereco":
+		{
+			"logradouro":"Rua Ângelo Picoli" ,
+			"numero":"80" ,
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Claudio" ,
+		"sobrenome":"Jose",
+		"endereco":
+		{
+			"logradouro":"Rua Marte" ,
+			"numero":"7",
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Cristina" ,
+		"sobrenome":"Isidoro",
+		"endereco":
+		{
+			"logradouro":"Rua das Folhas" ,
+			"numero":"53",
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Aline" ,
+		"sobrenome":"Carvalho",
+		"endereco":
+		{
+			"logradouro":"Rua Passagem Daniela Peres" ,
+			"numero":"50",
+			"cidade":"Sao Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Anderson" ,
+		"sobrenome":"Valentim",
+		"endereco":
+		{
+			"logradouro":"Rua Marechal Deodoro",
+			"numero":"1932",
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+	{
+		"nome":"Everton", 
+		"sobrenome":"Santana", 
+		"endereco":
+		{
+			"logradouro":"Rua bela vista",
+			"numero":"724",
+			"cidade":"São Bernardo do Campo" ,
+			"estado":"Sao Paulo",
+			"pais":"Brasil",
+		}
+	}
+
+]

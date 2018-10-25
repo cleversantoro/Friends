@@ -1,0 +1,27 @@
+﻿[
+    {
+		"nome":"Valeria",
+		"sobrenome":"Barros",
+		"endereco":
+		{
+			"logradouro":"Rua Cafelandia",
+			"numero":"412",
+			"cidade":"Santo André",
+			"estado":"São Paulo",
+			"pais":"Brasil",
+		}
+	},
+
+    {
+		"nome":"Cleber",
+		"sobrenome":"Santos",
+		"endereco":
+		{
+			"logradouro":"Rua dos Bambus",
+			"numero":"521",
+			"cidade":"Santo André",
+			"estado":"São Paulo",
+			"pais":"Brasil",
+		}
+	},
+]
