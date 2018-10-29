@@ -10,6 +10,8 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AssemblyName>Friends.SPA</AssemblyName>
+    <RootNamespace>Friends.SPA</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,8 +22,64 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\app\counter\**" />
+    <Compile Remove="ClientApp\src\app\fetch-data\**" />
+    <Compile Remove="ClientApp\src\app\filmes\**" />
+    <Compile Remove="ClientApp\src\app\nav-menu\**" />
+    <Compile Remove="ClientApp\src\app\placar\**" />
+    <Compile Remove="ClientApp\src\assets\bootstrap\**" />
+    <Compile Remove="ClientApp\src\assets\jquery\**" />
+    <Compile Remove="ClientApp\src\assets\styles\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\counter\**" />
+    <Content Remove="ClientApp\src\app\fetch-data\**" />
+    <Content Remove="ClientApp\src\app\filmes\**" />
+    <Content Remove="ClientApp\src\app\nav-menu\**" />
+    <Content Remove="ClientApp\src\app\placar\**" />
+    <Content Remove="ClientApp\src\assets\bootstrap\**" />
+    <Content Remove="ClientApp\src\assets\jquery\**" />
+    <Content Remove="ClientApp\src\assets\styles\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ClientApp\src\app\counter\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\fetch-data\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\filmes\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\nav-menu\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\placar\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\bootstrap\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\jquery\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\styles\**" />
+    <None Remove="ClientApp\src\app\counter\**" />
+    <None Remove="ClientApp\src\app\fetch-data\**" />
+    <None Remove="ClientApp\src\app\filmes\**" />
+    <None Remove="ClientApp\src\app\nav-menu\**" />
+    <None Remove="ClientApp\src\app\placar\**" />
+    <None Remove="ClientApp\src\assets\bootstrap\**" />
+    <None Remove="ClientApp\src\assets\jquery\**" />
+    <None Remove="ClientApp\src\assets\styles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\SampleDataController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\package-lock.json" />
+    <None Remove="ClientApp\src\app\app.route.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
