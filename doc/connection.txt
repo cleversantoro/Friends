@@ -1,0 +1,1 @@
+Data Source=Enterprise-e;Initial Catalog=FriendsDB;Integrated Security=True

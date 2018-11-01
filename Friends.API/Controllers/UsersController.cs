@@ -5,7 +5,7 @@ using Friends.Entities;
 
 namespace Friends.Controllers
 {
-  [Authorize]
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UsersController : ControllerBase
@@ -19,7 +19,7 @@ namespace Friends.Controllers
 
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody]User userParam)
+        public IActionResult Authenticate([FromBody]Usuarios userParam)
         {
             var user = _userService.Authenticate(userParam.Username, userParam.Password);
 
@@ -32,7 +32,7 @@ namespace Friends.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var users =  _userService.GetAll();
+            var users = _userService.GetAll();
             return Ok(users);
         }
     }

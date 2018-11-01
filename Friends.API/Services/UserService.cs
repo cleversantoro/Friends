@@ -8,36 +8,46 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Friends.Entities;
 using Friends.Helpers;
+using Friends.Repository;
+using Microsoft.Extensions.Configuration;
+using Friends.API.Controllers;
 
 namespace Friends.Services
 {
     public interface IUserService
     {
-        User Authenticate(string username, string password);
-        IEnumerable<User> GetAll();
+        Usuarios Authenticate(string Usuariosname, string password);
+        IEnumerable<Usuarios> GetAll();
     }
 
-    public class UserService : IUserService
+    public class UserService : BaseController , IUserService
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<User> _users = new List<User>
+        // Usuarioss hardcoded for simplicity, store in a db with hashed passwords in production applications
+        private List<Usuarios> _Usuarioss = new List<Usuarios>
         { 
-            new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" } 
+            new Usuarios { Id = 1, Nome = "Test", Sobrenome = "Usuarios", Username = "test", Password = "test" } 
         };
 
         private readonly AppSettings _appSettings;
 
-        public UserService(IOptions<AppSettings> appSettings)
+        public UserService(IOptions<AppSettings> appSettings, IConfiguration config)
+            :base(config) 
         {
             _appSettings = appSettings.Value;
         }
 
-        public User Authenticate(string username, string password)
+        public Usuarios Authenticate(string Username, string PassWord)
         {
-            var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
+            Usuarios Usuarios = new Usuarios();
+            using (var _uow = new UnitOfWork(_config.GetConnectionString("FriendsBDEntities")))
+            {
+                Usuarios = _uow.UsuariosRepository.Authenticate(Username, PassWord).Result;
+            }
 
-            // return null if user not found
-            if (user == null)
+            //var Usuarios = _Usuarioss.SingleOrDefault(x => x.Username == Username && x.Password == password);
+
+            // return null if Usuarios not found
+            if (Usuarios == null)
                 return null;
 
             // authentication successful so generate jwt token
@@ -47,24 +57,24 @@ namespace Friends.Services
             {
                 Subject = new ClaimsIdentity(new Claim[] 
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim(ClaimTypes.Name, Usuarios.Id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            user.Token = tokenHandler.WriteToken(token);
+            Usuarios.Token = tokenHandler.WriteToken(token);
 
             // remove password before returning
-            user.Password = null;
+            Usuarios.Password = null;
 
-            return user;
+            return Usuarios;
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<Usuarios> GetAll()
         {
-            // return users without passwords
-            return _users.Select(x => {
+            // return Usuarioss without passwords
+            return _Usuarioss.Select(x => {
                 x.Password = null;
                 return x;
             });
