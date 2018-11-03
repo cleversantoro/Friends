@@ -1,3 +1,3 @@
 import {environment} from '../environments/environment'
 
-export const FILMES_API = environment.api
+export const CONTATOS_API = environment.api

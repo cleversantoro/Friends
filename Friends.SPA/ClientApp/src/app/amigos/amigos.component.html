@@ -1,0 +1,50 @@
+<br>
+<div class="jumbotron">
+  <h2 class="text-center"><strong>AMIGOS</strong></h2>
+  <h6 class="text-center">Selecione seu amigo</h6>
+  <h6 class="text-center">Selecione seu amigo na lista abaixo e depois pressione o botão <br> "ENCONTRAR AMIGOS PRÓXIMOS" <br> para prosseguir.</h6>
+</div>
+<section class="container">
+  <p *ngIf="!contatos"><em>Carregando...</em></p>
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <form name="myForm">
+        <label for="repeatSelect">Selecione:</label>
+        <select name="repeatSelect" id="repeatSelect" (change)="getOption($event.target.value)" ng-model="data.model">
+          <option *ngFor="let contato of contatos" value={{contato.id}}>
+            {{contato.nome}}
+          </option>
+        </select>
+      </form>
+    </div>
+
+    <div class="col-sm-6">
+      <a class="btn btn-primary" id="btnGerar" (click)="getCloseContacts()">ENCONTRAR AMIGOS PRÓXIMOS</a>
+    </div>
+  </div>
+</section>
+
+<section class="content" *ngIf="closeContacts">
+  <div class="row">
+    <div *ngFor="let closeContact of closeContacts" class="col-sm-3 col-xs-12">
+      <div class="item-filme">
+        <div class="item-filme-content">
+          <h5 class="card-title"><strong>{{ closeContact.nome }}</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ closeContact.sobrenome }}</h6>
+          <address>
+            {{ closeContact.logradouro }} {{ closeContact.numero }}<br />
+            {{ closeContact.cidade }}<br />
+            {{ closeContact.estado }}<br />
+            {{ closeContact.pais }}<br />
+          </address>
+          <hr />
+          <label>Distância: {{ closeContact.distancia }} Km</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

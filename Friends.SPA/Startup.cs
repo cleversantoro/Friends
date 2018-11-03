@@ -1,4 +1,4 @@
-//using CopaFilmes.Domain.Entity;
+//using Friends.Domain.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CopaFilmes.SPA
+namespace Friends.SPA
 {
     public class Startup
     {
@@ -44,7 +44,7 @@ namespace CopaFilmes.SPA
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            app.UseCors(builder => builder.WithOrigins("https://copafilmes.azurewebsites.net/api/filmes"));
+            app.UseCors(builder => builder.WithOrigins("https:///api/filmes"));
 
             if (env.IsDevelopment())
             {

@@ -72,6 +72,8 @@
   <ItemGroup>
     <None Remove="ClientApp\package-lock.json" />
     <None Remove="ClientApp\src\app\app.route.ts" />
+    <None Remove="ClientApp\src\app\login\login.module.ts" />
+    <None Remove="ClientApp\src\app\login\login.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,6 +82,10 @@
 
   <ItemGroup>
     <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

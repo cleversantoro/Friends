@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api: 'https://copafilmes.azurewebsites.net/api'
+  api: 'http://localhost:7627'
 };

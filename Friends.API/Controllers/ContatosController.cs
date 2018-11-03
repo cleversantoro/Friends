@@ -23,7 +23,6 @@ namespace Friends.API.Controllers
             
         }
 
-        //[AllowAnonymous]
         [HttpGet("GetContatos")]
         public IActionResult GetContato()
         {
@@ -34,13 +33,32 @@ namespace Friends.API.Controllers
             }
         }
 
-        //[AllowAnonymous]
+        [HttpGet("GetList")]
+        public IActionResult GetList()
+        {
+            using (var _uow = new UnitOfWork(_config.GetConnectionString("FriendsBDEntities")))
+            {
+                var m = _uow.ContatosRepository.SelectList();
+                return Ok(m.Result);
+            }
+        }
+
         [HttpPost("GetCloseContacts")]
         public IActionResult GetCloseContacts([FromBody] Usuarios userParam)
         {
             using (var _uow = new UnitOfWork(_config.GetConnectionString("FriendsBDEntities")))
             {
                 var m = _uow.ContatosRepository.GetCloseContacts(userParam.Nome,userParam.Sobrenome);
+                return Ok(m.ToList());
+            }
+        }
+
+        [HttpGet("GetCloseContacts/{id}")]
+        public IActionResult GetCloseContacts(int id)
+        {
+            using (var _uow = new UnitOfWork(_config.GetConnectionString("FriendsBDEntities")))
+            {
+                var m = _uow.ContatosRepository.GetCloseContacts(id);
                 return Ok(m.ToList());
             }
         }
