@@ -82,8 +82,8 @@ WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW
 GO
 
            
-INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua Cafelandia', 412, 'Santo André', 'São Paulo', 'Brasil', '23.6958763','-46.5287875') 
-INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua dos Bambus', 521, 'Santo André', 'São Paulo', 'Brasil','23.6902945', '-46.5135581')
+INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua Cafelandia', 412, 'Santo André', 'São Paulo', 'Brasil', '-23.6958763','-46.5287875') 
+INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua dos Bambus', 521, 'Santo André', 'São Paulo', 'Brasil','-23.6902945', '-46.5135581')
 INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua Coréia', 430, 'Santo André', 'São Paulo', 'Brasil','-23.6387126','-46.5119170' )
 INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua Carlos Lacerda',  25, 'São Bernardo do Campo', 'São Paulo', 'Brasil','-23.7195112','-46.5406236')
 INSERT INTO [dbo].[Enderecos]  ([Logradouro],[Numero],[Cidade],[Estado],[Pais],[Latitude],[Longitude]) values ('Rua Andre Coppini' , 29, 'Sao Bernardo Do Campo' , 'Sao Paulo', 'Brasil', '-23.7175365','-46.5404069')
