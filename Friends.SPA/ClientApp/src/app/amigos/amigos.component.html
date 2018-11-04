@@ -13,8 +13,9 @@
       <form name="myForm">
         <label for="repeatSelect">Selecione:</label>
         <select name="repeatSelect" id="repeatSelect" (change)="getOption($event.target.value)" ng-model="data.model">
+          <option value="" disabled selected>seu amigo</option>
           <option *ngFor="let contato of contatos" value={{contato.id}}>
-            {{contato.nome}}
+          {{contato.nome}}
           </option>
         </select>
       </form>
