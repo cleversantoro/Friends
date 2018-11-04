@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6CBC710B-867D-4F01-835A-AF9B2C91E049}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>viavarejofriends</RootNamespace>
-    <AssemblyName>viavarejofriends</AssemblyName>
+    <RootNamespace>Friends.Console</RootNamespace>
+    <AssemblyName>Friends.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

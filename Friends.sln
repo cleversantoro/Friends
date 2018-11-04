@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friends.console", "Friends.console\Friends.console.csproj", "{6CBC710B-867D-4F01-835A-AF9B2C91E049}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friends.Test", "Friends.Test\Friends.Test.csproj", "{6938B293-9427-40B8-AB52-87F8D4358715}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friends.Console", "Friends.console\Friends.Console.csproj", "{6CBC710B-867D-4F01-835A-AF9B2C91E049}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Friends.API", "Friends.API\Friends.API.csproj", "{4402FA55-E40F-486C-ADC3-A9D63A9C41C1}"
 EndProject
@@ -13,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Friends.Repository", "Frien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Friends.Entities", "Friends.Entities\Friends.Entities.csproj", "{A978D6E8-9D0F-40CE-9135-F3F073E76D18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friends.SPA", "Friends.SPA\Friends.SPA.csproj", "{5B41A484-24BF-455B-B9D1-D0950165617D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Friends.SPA", "Friends.SPA\Friends.SPA.csproj", "{5B41A484-24BF-455B-B9D1-D0950165617D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friends.Test", "Friends.Test\Friends.Test.csproj", "{B32EA3FB-18EE-40B6-8B37-540382726C3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{6CBC710B-867D-4F01-835A-AF9B2C91E049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBC710B-867D-4F01-835A-AF9B2C91E049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBC710B-867D-4F01-835A-AF9B2C91E049}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6938B293-9427-40B8-AB52-87F8D4358715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6938B293-9427-40B8-AB52-87F8D4358715}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6938B293-9427-40B8-AB52-87F8D4358715}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6938B293-9427-40B8-AB52-87F8D4358715}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4402FA55-E40F-486C-ADC3-A9D63A9C41C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4402FA55-E40F-486C-ADC3-A9D63A9C41C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4402FA55-E40F-486C-ADC3-A9D63A9C41C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{5B41A484-24BF-455B-B9D1-D0950165617D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B41A484-24BF-455B-B9D1-D0950165617D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B41A484-24BF-455B-B9D1-D0950165617D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B32EA3FB-18EE-40B6-8B37-540382726C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B32EA3FB-18EE-40B6-8B37-540382726C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B32EA3FB-18EE-40B6-8B37-540382726C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B32EA3FB-18EE-40B6-8B37-540382726C3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,226 @@
+[
+    {
+        "id_Endereco": 1,
+        "nome": "Valeria",
+        "sobrenome": "Barros",
+        "endereco": {
+            "logradouro": "Rua Cafelandia",
+            "numero": 412,
+            "cidade": "Santo André",
+            "estado": "São Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.6958763",
+            "longitude": "-46.5287875",
+            "id": 1
+        },
+        "id": 1
+    },
+    {
+        "id_Endereco": 2,
+        "nome": "Cleber",
+        "sobrenome": "Santos",
+        "endereco": {
+            "logradouro": "Rua dos Bambus",
+            "numero": 521,
+            "cidade": "Santo André",
+            "estado": "São Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.6902945",
+            "longitude": "-46.5135581",
+            "id": 2
+        },
+        "id": 2
+    },
+    {
+        "id_Endereco": 3,
+        "nome": "Barbara",
+        "sobrenome": "Silva",
+        "endereco": {
+            "logradouro": "Rua Coréia",
+            "numero": 430,
+            "cidade": "Santo André",
+            "estado": "São Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.6387126",
+            "longitude": "-46.5119170",
+            "id": 3
+        },
+        "id": 3
+    },
+    {
+        "id_Endereco": 4,
+        "nome": "Claudio",
+        "sobrenome": "Rodrigues",
+        "endereco": {
+            "logradouro": "Rua Carlos Lacerda",
+            "numero": 25,
+            "cidade": "São Bernardo do Campo",
+            "estado": "São Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7195112",
+            "longitude": "-46.5406236",
+            "id": 4
+        },
+        "id": 4
+    },
+    {
+        "id_Endereco": 5,
+        "nome": "Lucien",
+        "sobrenome": "Silva",
+        "endereco": {
+            "logradouro": "Rua Andre Coppini",
+            "numero": 29,
+            "cidade": "Sao Bernardo Do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7175365",
+            "longitude": "-46.5404069",
+            "id": 5
+        },
+        "id": 5
+    },
+    {
+        "id_Endereco": 6,
+        "nome": "Vanderlei",
+        "sobrenome": "Leite",
+        "endereco": {
+            "logradouro": "Rua Machado De Assis",
+            "numero": 73,
+            "cidade": "Sao Bernardo Do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7178678",
+            "longitude": "-46.5422826",
+            "id": 6
+        },
+        "id": 6
+    },
+    {
+        "id_Endereco": 7,
+        "nome": "Leonardo",
+        "sobrenome": "Rodrigues",
+        "endereco": {
+            "logradouro": "Rua Rosa Margonari Borali",
+            "numero": 41,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7187546",
+            "longitude": "-46.5404101",
+            "id": 7
+        },
+        "id": 7
+    },
+    {
+        "id_Endereco": 8,
+        "nome": "Alexandre",
+        "sobrenome": "Refineti",
+        "endereco": {
+            "logradouro": "Rua Americo Margonari",
+            "numero": 46,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7116071",
+            "longitude": "-46.5477997",
+            "id": 8
+        },
+        "id": 8
+    },
+    {
+        "id_Endereco": 9,
+        "nome": "Rosana",
+        "sobrenome": "Almeida",
+        "endereco": {
+            "logradouro": "Rua Ângelo Picoli",
+            "numero": 80,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7116071",
+            "longitude": "-46.5477997",
+            "id": 9
+        },
+        "id": 9
+    },
+    {
+        "id_Endereco": 10,
+        "nome": "Claudio",
+        "sobrenome": "Jose",
+        "endereco": {
+            "logradouro": "Rua Marte",
+            "numero": 7,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7244504",
+            "longitude": "-46.5268659",
+            "id": 10
+        },
+        "id": 10
+    },
+    {
+        "id_Endereco": 11,
+        "nome": "Cristina",
+        "sobrenome": "Isidoro",
+        "endereco": {
+            "logradouro": "Rua das Folhas",
+            "numero": 53,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7277518",
+            "longitude": "-46.5282141",
+            "id": 11
+        },
+        "id": 11
+    },
+    {
+        "id_Endereco": 12,
+        "nome": "Aline",
+        "sobrenome": "Carvalho",
+        "endereco": {
+            "logradouro": "Rua Passagem Daniela Peres",
+            "numero": 50,
+            "cidade": "Sao Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7128962",
+            "longitude": "-46.5329595",
+            "id": 12
+        },
+        "id": 12
+    },
+    {
+        "id_Endereco": 13,
+        "nome": "Anderson",
+        "sobrenome": "Valentim",
+        "endereco": {
+            "logradouro": "Rua Marechal Deodoro",
+            "numero": 1932,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7150778",
+            "longitude": "-46.5512778",
+            "id": 13
+        },
+        "id": 13
+    },
+    {
+        "id_Endereco": 14,
+        "nome": "Everton",
+        "sobrenome": "Santana",
+        "endereco": {
+            "logradouro": "Rua bela vista",
+            "numero": 724,
+            "cidade": "São Bernardo do Campo",
+            "estado": "Sao Paulo",
+            "pais": "Brasil",
+            "latitude": "-23.7153467",
+            "longitude": "-46.5480427",
+            "id": 14
+        },
+        "id": 14
+    }
+]
