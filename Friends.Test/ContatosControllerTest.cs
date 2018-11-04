@@ -35,16 +35,6 @@ namespace Friends.Test
             Assert.IsType<OkObjectResult>(okResult);
         }
 
-        [Fact]
-        public void Teste_Metodo_GetCloseContacts_Retorna_Contatos_proximos_por_nome_sobrenome()
-        {
-            Usuarios user = new Usuarios();
-            user.Nome = "Valeria";
-            user.Sobrenome = "Barros";
-
-            var okResult = contatos.GetCloseContacts(user);
-            Assert.IsType<OkObjectResult>(okResult);
-        }
 
         [Fact]
         public void Teste_Metodo_GetCloseContacts_Retorna_Contatos_proximos_por_id()

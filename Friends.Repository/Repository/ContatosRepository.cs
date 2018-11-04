@@ -23,21 +23,6 @@ namespace Friends.Repository
         {
         }
 
-        public List<Contatos> GetContatoss()
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            List<Contatos> listContatos = new List<Contatos>();
-
-            string path = System.IO.Directory.GetCurrentDirectory();
-
-            using (StreamReader sr = new StreamReader(string.Format("{0}{1}", path, "\\data\\Contatos.txt")))
-            {
-                string json = sr.ReadToEnd();
-                listContatos = JsonConvert.DeserializeObject<List<Contatos>>(json);
-            }
-            return listContatos;
-        }
-
         public Contatos GetLatLongtoAddress(Contatos Contatos)
         {
             GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyAeuMG_ryGN1_JVLUVnVbNedMrOswNAO8g")); //KEY(chave) do google maps
@@ -70,23 +55,6 @@ namespace Friends.Repository
             return Contatos;
         }
 
-        public Contatos GetContatosByName(string nome, string sobrenome)
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            List<Contatos> listContatos = new List<Contatos>();
-
-            string path = System.IO.Directory.GetCurrentDirectory();
-
-            using (StreamReader sr = new StreamReader(string.Format("{0}{1}", path, "\\data\\Contatos.txt")))
-            {
-                string json = sr.ReadToEnd();
-                listContatos = JsonConvert.DeserializeObject<List<Contatos>>(json);
-            }
-
-            Contatos pers = listContatos.Where(p => p.Nome.Equals(nome) && p.Sobrenome.Equals(sobrenome)).First();
-            return pers;
-        }
-
         public void UpdateLatLong(Enderecos entity)
         {
             Connection.Execute(
@@ -100,72 +68,18 @@ namespace Friends.Repository
         {
             string sQuery = "INSERT INTO " +
                 "CalculoHistoricoLog (id_Contato,id_Amigo,Distancia) " +
-                "VALUES (@id_Contato, @id_Amigo, @Distancia); SELECT SCOPE_IDENTITY()";
+                "VALUES (@id_Contato, @id_Amigo, @Distancia);";
 
-            var Id = Connection.ExecuteScalar<int>(
+            var parametros = new DynamicParameters();
+            parametros.Add("id_Contato", idcontato, DbType.Int32);
+            parametros.Add("id_Amigo", idamigo, DbType.Int32);
+            parametros.Add("Distancia", distancia, DbType.String);
+
+            Connection.Execute(
                 sQuery,
-                param: new { id_Contato = idcontato, id_Amigo = idamigo, Distancia = distancia },
+                param: parametros,
                 transaction: Transaction
             );
-        }
-
-        private IEnumerable<ContatosViewModel> GetCloseFriends(string nome, string sobrenome)
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            List<Contatos> listContatos = new List<Contatos>();
-            List<ContatosViewModel> retorno = new List<ContatosViewModel>();
-
-            string sQuery = "select c.*,e.* " +
-                            "from contatos c " +
-                            "inner join enderecos e on c.id_endereco = e.id";
-
-            var result = Connection.Query<Contatos, Enderecos, Contatos>(sQuery,
-                map: (contatos, enderecos) =>
-                {
-                    contatos.endereco = enderecos;
-                    return contatos;
-                },
-                splitOn: "id_endereco,id",
-                transaction: Transaction);
-
-            foreach (var item in result)
-            {
-                if (( string.IsNullOrEmpty(item.endereco.Longitude) ) || (string.IsNullOrEmpty(item.endereco.Latitude)))
-                    listContatos.Add(GetLatLongtoAddress(item));
-                else
-                    listContatos.Add(item);
-            }
-
-            Contatos porigem = listContatos.Where(p => p.Nome.Equals(nome) && p.Sobrenome.Equals(sobrenome)).FirstOrDefault();
-
-            var res = from tc in listContatos
-                      select new
-                      {
-                          Contatos = tc,
-                          distance = GetDistanceLatLong(porigem, tc),
-                      };
-
-            var t = res.OrderBy(p => p.distance).Where(p => p.distance > 0).Take(3).ToList();
-
-            //InsertHistoricoLog(porigem.Id)
-
-            foreach (var item in t)
-            {
-                retorno.Add(new ContatosViewModel() {
-                    Cidade = item.Contatos.endereco.Cidade,
-                    Distancia = Math.Round(double.Parse(item.distance.ToString())).ToString(),
-                    Estado = item.Contatos.endereco.Estado,
-                    Logradouro = item.Contatos.endereco.Logradouro,
-                    Nome = item.Contatos.Nome,
-                    Numero = item.Contatos.endereco.Numero,
-                    Pais= item.Contatos.endereco.Pais,
-                    Sobrenome = item.Contatos.Sobrenome
-                });
-
-                InsertHistoricoLog(porigem.Id, item.Contatos.Id, item.distance.ToString());
-            }
-
-            return retorno;
         }
 
         private IEnumerable<ContatosViewModel> GetCloseFriends(int id)
@@ -206,8 +120,6 @@ namespace Friends.Repository
 
             var t = res.OrderBy(p => p.distance).Where(p => p.distance > 0).Take(3).ToList();
 
-            //InsertHistoricoLog(porigem.Id)
-
             foreach (var item in t)
             {
                 retorno.Add(new ContatosViewModel()
@@ -224,6 +136,7 @@ namespace Friends.Repository
 
                 InsertHistoricoLog(porigem.Id, item.Contatos.Id, item.distance.ToString());
             }
+            Transaction.Commit();
 
             return retorno;
         }
@@ -283,12 +196,6 @@ namespace Friends.Repository
                 splitOn: "id_endereco,id",
                 transaction: Transaction);
 
-            return result.ToList();
-        }
-
-        public List<ContatosViewModel> GetCloseContacts(string nome, string sobrenome)
-        {
-            var result = GetCloseFriends(nome, sobrenome);
             return result.ToList();
         }
 

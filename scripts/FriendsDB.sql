@@ -38,9 +38,14 @@ CREATE TABLE [dbo].[CalculoHistoricoLog](
 	[id_Contato] [int] NULL,
 	[id_Amigo] [int] NULL,
 	[Distancia] [nvarchar](20) NULL,
+	[Data_Insercao] [datetime] NULL,
 CONSTRAINT [PK_CalculoHistoricoLog] PRIMARY KEY CLUSTERED ([id] ASC)
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]
 GO
+
+ALTER TABLE [dbo].[CalculoHistoricoLog] ADD  CONSTRAINT [DF_CalculoHistoricoLog_Data_Insercao]  DEFAULT (getdate()) FOR [Data_Insercao]
+GO
+
 
 CREATE TABLE [dbo].[Enderecos](
 	[id] [int] IDENTITY(1,1) NOT NULL,

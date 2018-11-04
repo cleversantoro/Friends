@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Friends.Repository.Interface
 {
-    public interface IContatosRepository
+    public interface ICalculoHistoricoLogRepository
     {
         Task<Contatos> GetByID(int id);
         Task<IEnumerable<Contatos>> SelectAll();
         Task<IEnumerable<ContatosListViewModel>> SelectList();
+        List<ContatosViewModel> GetCloseContacts(string nome, string sobrenome);
         List<ContatosViewModel> GetCloseContacts(int id);
     }
 }

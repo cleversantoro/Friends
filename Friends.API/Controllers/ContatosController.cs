@@ -43,16 +43,6 @@ namespace Friends.API.Controllers
             }
         }
 
-        [HttpPost("GetCloseContacts")]
-        public IActionResult GetCloseContacts([FromBody] Usuarios userParam)
-        {
-            using (var _uow = new UnitOfWork(_config.GetConnectionString("FriendsBDEntities")))
-            {
-                var m = _uow.ContatosRepository.GetCloseContacts(userParam.Nome,userParam.Sobrenome);
-                return Ok(m.ToList());
-            }
-        }
-
         [HttpGet("GetCloseContacts/{id}")]
         public IActionResult GetCloseContacts(int id)
         {
